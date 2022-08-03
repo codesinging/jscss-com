@@ -9,6 +9,7 @@
   "devDependencies": {
     "@icon-park/vue-next": "^1.4.2",
     "@nuxtjs/tailwindcss": "^5.3.1",
-    "nuxt": "3.0.0-rc.6"
+    "nuxt": "3.0.0-rc.6",
+    "vue": "^3.2.37"
   }
 }
