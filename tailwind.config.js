@@ -10,7 +10,11 @@ module.exports = {
         './plugins/**/*.{vue,js,ts}',
     ],
     theme: {
-        extend: {},
+        extend: {
+            container: {
+                center: true,
+            },
+        },
     },
     plugins: [],
 }

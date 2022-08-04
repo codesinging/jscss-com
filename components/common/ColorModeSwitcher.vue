@@ -6,8 +6,8 @@
 
 <script setup>
 import {NewComputer, Moon, SunOne} from "@icon-park/vue-next";
-import {computed, ref, watch} from "vue";
 import {useColorMode} from "@vueuse/core";
+import {computed, ref} from "vue";
 
 const mode = useColorMode()
 
