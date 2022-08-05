@@ -14,7 +14,6 @@
 </template>
 
 <script setup>
-
 import JscssLogo from "../images/JscssLogo";
 </script>
 

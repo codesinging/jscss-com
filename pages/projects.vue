@@ -1,14 +1,12 @@
 <template>
-    <div class="container">
-            index
-    </div>
+    <div class="container">projects</div>
 </template>
 
 <script setup>
 import {useHead} from "nuxt/app";
 
 useHead({
-    title: '首页',
+    title: '前端项目',
 })
 </script>
 

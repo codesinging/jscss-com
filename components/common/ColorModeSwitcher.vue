@@ -1,25 +1,36 @@
 <template>
-    <span @click="click" class="cursor-pointer">
-        <component :is="icon"></component>
-    </span>
+    <div v-if="visible" @click="click" class="cursor-pointer inline-flex items-center">
+        <component :is="icon" :size="size"/>
+    </div>
 </template>
 
 <script setup>
 import {NewComputer, Moon, SunOne} from "@icon-park/vue-next";
 import {useColorMode} from "@vueuse/core";
-import {computed, ref} from "vue";
+import {computed, nextTick, ref, watch} from "vue";
 
-const mode = useColorMode()
+defineProps({
+    size: {
+        type: [String, Number],
+        default: 16,
+    }
+})
+
+const visible = ref(false)
+
+const mode = useColorMode({emitAuto: true})
 
 const modes = ['auto', 'light', 'dark']
-const index = ref(0)
+const index = computed(() => modes.findIndex(item => item === mode.value))
 const icons = [NewComputer, SunOne, Moon]
 const icon = computed(() => icons[index.value])
 
+nextTick(() => visible.value = true)
+
 const click = () => {
-    index.value = (index.value >= modes.length - 1) ? 0 : (index.value + 1)
-    mode.value = modes[index.value]
+    mode.value = modes[index.value + 1] ?? modes[0]
 }
+
 </script>
 
 <style scoped>
