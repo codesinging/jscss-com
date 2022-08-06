@@ -15,12 +15,12 @@
                 </div>
             </div>
             <div class="space-x-2 hidden lg:flex items-center">
-                <color-mode-switcher/>
+                <color-mode-switcher size="20"/>
             </div>
             <div class="flex lg:hidden items-center">
                 <div @click="toggleDrawer" class="h-10 w-8 flex items-center justify-center">
-                    <close v-if="drawerVisible" size="16"/>
-                    <hamburger-button v-else size="18"/>
+                    <close v-if="drawerVisible" size="18"/>
+                    <hamburger-button v-else size="20"/>
                 </div>
             </div>
             <div v-if="drawerVisible" class="fixed block lg:hidden top-14 inset-x-0 bottom-0 px-4 py-4 bg-white dark:bg-gray-700 transition-all overflow-y-auto z-20">
@@ -33,7 +33,7 @@
                 <div class="mt-4">
                     <div class="flex items-center justify-between space-x-2 bg-gray-100 dark:bg-gray-800 h-12 px-4">
                         <span>外观</span>
-                        <color-mode-switcher :size="20"/>
+                        <color-mode-switcher size="20"/>
                     </div>
                 </div>
             </div>
