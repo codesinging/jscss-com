@@ -14,5 +14,10 @@ export default defineNuxtConfig({
                 {rel: 'icon', href: '/favicon.svg'},
             ]
         }
-    }
+    },
+    runtimeConfig: {
+        public: {
+            baseUrl: '',
+        }
+    },
 })
