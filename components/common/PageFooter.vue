@@ -6,8 +6,9 @@
                     <jscss-logo size="48" class="animate-pulse"></jscss-logo>
                 </nuxt-link>
             </div>
+            <div class="text-sm text-gray-500 text-center">{{ site.description }}</div>
             <div class="text-sm text-center">
-                <a href="https://beian.miit.gov.cn/" class="text-gray-400 text-xs" target="_blank">豫ICP备15010011号-1</a>
+                <a href="https://beian.miit.gov.cn/" class="text-gray-400 text-xs" target="_blank">{{ site.icp }}</a>
             </div>
         </div>
     </div>
@@ -15,6 +16,9 @@
 
 <script setup>
 import JscssLogo from "../images/JscssLogo";
+import useSite from "../../composables/useSite";
+
+const site = useSite()
 </script>
 
 <style scoped>

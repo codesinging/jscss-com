@@ -7,7 +7,7 @@
                         <jscss-logo size="24" class="animate-pulse"/>
                     </nuxt-link>
                     <nuxt-link to="/" @click="toggleDrawer" class="text-lg">
-                        JsCss.com 前端网
+                        {{ site.name }}
                     </nuxt-link>
                 </div>
                 <div class="space-x-4 h-full hidden lg:flex">
@@ -46,6 +46,9 @@ import JscssLogo from "../images/JscssLogo";
 import ColorModeSwitcher from "./ColorModeSwitcher";
 import {HamburgerButton, Close, ArrowRight} from "@icon-park/vue-next";
 import {ref} from "vue";
+import useSite from "../../composables/useSite";
+
+const site = useSite()
 
 const menus = [
     {name: '社区', url: '/club'},
