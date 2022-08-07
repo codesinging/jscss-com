@@ -1,7 +1,7 @@
 <template>
     <button
         :type="nativeType"
-        class="inline-flex items-center justify-center font-medium disabled:cursor-not-allowed focus:outline-none space-x-2"
+        class="inline-flex items-center justify-center font-medium disabled:cursor-not-allowed outline-none appearance-none space-x-2 transition-all duration-75"
         :class="[typeClass, shapeClass, heightClass, widthClass, paddingClass, fontSizeClass]"
         :disabled="isDisabled"
         @click="click"
@@ -49,10 +49,10 @@ const props = defineProps({
 
 const typeClass = computed(() => {
     const classes = {
-        default: 'border border-gray-300 bg-white text-gray-600 hover:bg-gray-50 focus:bg-gray-100 disabled:border-opacity-25 disabled:text-opacity-30 disabled:bg-white',
-        primary: 'border-transparent text-white bg-blue-500 hover:bg-blue-400 focus:bg-blue-600 disabled:text-opacity-50 disabled:bg-blue-300 transition-all',
-        success: 'border-transparent text-white bg-green-500 hover:bg-green-400 focus:bg-green-600 disabled:text-opacity-50 disabled:bg-green-300 transition-all',
-        danger: 'border-transparent text-white bg-red-500 hover:bg-red-400 focus:bg-red-600 disabled:text-opacity-50 disabled:bg-red-300 transition-all',
+        default: 'border border-gray-300 text-gray-600 bg-gray-50 hover:bg-gray-200 focus:bg-gray-200 active:bg-gray-50 disabled:border-opacity-25 disabled:text-opacity-30 disabled:bg-white',
+        primary: 'border-transparent text-white bg-blue-500 hover:bg-blue-600 focus:bg-blue-600 active:bg-blue-500 disabled:text-opacity-50 disabled:bg-blue-300',
+        success: 'border-transparent text-white bg-green-500 hover:bg-green-600 focus:bg-green-600 active:bg-green-500 disabled:text-opacity-50 disabled:bg-green-300',
+        danger: 'border-transparent text-white bg-red-500 hover:bg-red-600 focus:bg-red-600 active:bg-red-500 disabled:text-opacity-50 disabled:bg-red-300',
     }
 
     return classes[props.type] || classes.default
