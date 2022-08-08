@@ -1,9 +1,9 @@
 <template>
-    <div class="min-h-screen bg-white text-gray-600 dark:bg-gray-700 dark:text-gray-300">
+    <div class="bg-white min-h-screen text-gray-600 dark:bg-gray-700 dark:text-gray-300">
         <nuxt-loading-indicator :height="1"/>
         <page-header/>
         <slot></slot>
-        <page-footer class="fixed bottom-0 inset-x-0"/>
+        <page-footer/>
     </div>
 </template>
 

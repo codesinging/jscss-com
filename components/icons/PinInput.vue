@@ -1,13 +1,13 @@
 <template>
-    <div class="pin-input flex items-center text-sm h-10 rounded overflow-hidden" @mouseenter="hovering=true" @mouseleave="hovering=false">
-        <div v-if="hasPrepend" class="pin-input-prepend flex-none flex items-center justify-center h-full border-l border-y rounded-l bg-gray-100 text-gray-500 text-sm overflow-hidden" :class="statusClasses">
+    <div class="pin-input" @mouseenter="hovering=true" @mouseleave="hovering=false">
+        <div v-if="hasPrepend" class="pin-input-prepend" :class="statusClasses">
             <slot name="prepend">
                 <span class="inline-block px-4">{{ prepend }}</span>
             </slot>
         </div>
 
-        <div class="flex-auto flex items-center h-full rounded-none border focus-within:border-blue-400 overflow-hidden" :class="containerClasses">
-            <div v-if="hasPrefix" class="flex-none flex items-center text-gray-400 ml-2">
+        <div class="pin-input-body" :class="containerClasses">
+            <div v-if="hasPrefix" class="pin-input-tag ml-2">
                 <slot name="prefix"></slot>
             </div>
 
@@ -27,26 +27,26 @@
                 @blur="onBlur"
                 @change="onChange"
                 ref="input"
-                class="flex-auto bg-transparent border-none w-full h-full focus:outline-none disabled:cursor-not-allowed px-2"
+                class="pin-input-input"
                 v-model="modelValue"
             >
 
-            <div v-if="hasSuffix" class="flex-none flex items-center text-gray-400 mr-2">
+            <div v-if="hasSuffix" class="pin-input-tag mr-2">
                 <slot name="suffix"></slot>
             </div>
 
-            <div v-if="isWordLimit" class="flex-none flex items-center text-gray-400 mr-2">{{ wordLength }}/{{ wordLimit }}</div>
+            <div v-if="isWordLimit" class="pin-input-tag mr-2">{{ wordLength }}/{{ wordLimit }}</div>
 
-            <div v-if="isClearable" @click="onClear" class="flex-none flex items-center text-gray-400 hover:text-gray-600 mr-2 cursor-pointer">
+            <div v-if="isClearable" @click="onClear" class="pin-input-tag hover:text-gray-600 mr-2 cursor-pointer">
                 <close/>
             </div>
 
-            <div v-if="loading" class="flex-none flex items-center text-gray-400 mr-2">
+            <div v-if="loading" class="pin-input-tag mr-2">
                 <pin-loading-icon/>
             </div>
         </div>
 
-        <div v-if="hasAppend" class="pin-input-append flex-none flex items-center justify-center h-full border-r border-y rounded-r bg-gray-100 text-gray-500 overflow-hidden" :class="statusClasses">
+        <div v-if="hasAppend" class="pin-input-append" :class="statusClasses">
             <slot name="append">
                 <span class="inline-block px-4">{{ append }}</span>
             </slot>
@@ -128,7 +128,7 @@ const containerClasses = computed(() => {
     hasPrepend.value || classes.push('rounded-l')
     hasAppend.value || classes.push('rounded-r')
 
-    isDisabled.value && classes.push('bg-gray-50', 'text-gray-400', 'cursor-not-allowed')
+    isDisabled.value && classes.push('pin-input-disabled')
 
     return classes
 })
@@ -177,6 +177,41 @@ watch(() => props.modelValue, value => {
 })
 </script>
 
-<style>
+<style scoped>
+.pin-input {
+    @apply flex items-center text-gray-500 text-sm h-10 rounded overflow-hidden;
+    @apply dark:text-gray-300;
+}
 
+.pin-input-prepend,
+.pin-input-append {
+    @apply flex-none flex items-center justify-center h-full border-y bg-gray-100 text-gray-500 overflow-hidden;
+    @apply dark:border-gray-400 dark:bg-gray-500 dark:text-gray-200;
+}
+
+.pin-input-prepend {
+    @apply border-l rounded-l;
+}
+
+.pin-input-append {
+    @apply border-r rounded-r ;
+}
+
+.pin-input-body {
+    @apply flex-auto flex items-center h-full border focus-within:border-blue-400 overflow-hidden;
+    @apply dark:border-gray-400 dark:focus-within:border-blue-300;
+}
+
+.pin-input-input {
+    @apply flex-auto bg-transparent border-none rounded w-full h-full focus:outline-none disabled:cursor-not-allowed px-2;
+}
+
+.pin-input-tag {
+    @apply flex-none flex items-center text-gray-400;
+}
+
+.pin-input-disabled {
+    @apply bg-gray-50 text-gray-400 cursor-not-allowed;
+    @apply dark:bg-gray-600 dark:text-opacity-50;
+}
 </style>
