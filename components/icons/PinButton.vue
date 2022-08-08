@@ -1,7 +1,7 @@
 <template>
     <button
         :type="nativeType"
-        class="inline-flex items-center justify-center font-medium disabled:cursor-not-allowed outline-none appearance-none space-x-2 transition-all duration-75"
+        class="pin-button inline-flex items-center justify-center font-medium disabled:cursor-not-allowed outline-none appearance-none space-x-2 transition-all duration-75"
         :class="[typeClass, shapeClass, heightClass, widthClass, paddingClass, fontSizeClass]"
         :disabled="isDisabled"
         @click="click"
@@ -101,8 +101,8 @@ const paddingClass = computed(() => {
 const fontSizeClass = computed(() => {
     const classes = {
         small: 'text-xs',
-        default: 'text-base',
-        large: 'text-xl',
+        default: 'text-sm',
+        large: 'text-base',
     }
     return classes[props.size] || classes.default
 })
@@ -126,5 +126,17 @@ const click = () => emits('click')
 </script>
 
 <style scoped>
+.pin-input-prepend .pin-button,
+.pin-input-append .pin-button {
+    border-left-width: 0;
+    border-right-width: 0;
+}
 
+.pin-input-prepend .pin-button {
+    border-radius: .25rem 0 0 .25rem;
+}
+
+.pin-input-append .pin-button {
+    border-radius: 0 .25rem .25rem 0;
+}
 </style>
