@@ -12,14 +12,12 @@ export const useSite = () => useState('site', () => ({
 export const useFetchSite = async () => {
     const {data} = await useGet('settings/settings', {group: 'site'})
 
-    const settings = data.value.data
-
     return {
-        name: settings.site_name,
-        title: settings.site_title,
-        keywords: settings.site_keywords,
-        description: settings.site_description,
-        icp: settings.site_icp_beian,
+        name: data.value.site_name,
+        title: data.value.site_title,
+        keywords: data.value.site_keywords,
+        description: data.value.site_description,
+        icp: data.value.site_icp_beian,
     }
 }
 
