@@ -97,7 +97,7 @@ const contentClasses = {
 
 .pin-card-subtitle {
     @apply text-sm text-gray-500;
-    @apply dark:text-gray-300;
+    @apply dark:text-gray-400;
 }
 
 .pin-card-header-extra {
