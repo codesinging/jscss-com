@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-white min-h-screen text-gray-600 dark:bg-gray-700 dark:text-gray-300">
+    <div class="bg-gray-50 min-h-screen text-gray-600 dark:bg-gray-700 dark:text-gray-300">
         <nuxt-loading-indicator :height="1"/>
         <page-header/>
         <slot></slot>
