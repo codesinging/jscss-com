@@ -15,7 +15,7 @@
                 </div>
             </div>
             <div class="space-x-2 hidden lg:flex items-center">
-                <color-mode-switcher size="20"/>
+                <pin-color-mode-icon size="20"/>
             </div>
             <div class="flex lg:hidden items-center">
                 <div @click="toggleDrawer" class="h-10 w-8 flex items-center justify-center">
@@ -33,7 +33,7 @@
                 <div class="mt-4">
                     <div class="flex items-center justify-between space-x-2 bg-gray-100 dark:bg-gray-800 h-12 px-4">
                         <span>外观</span>
-                        <color-mode-switcher size="20"/>
+                        <pin-color-mode-icon size="20"/>
                     </div>
                 </div>
             </div>
@@ -46,7 +46,7 @@ import JscssLogo from "../images/JscssLogo";
 import {HamburgerButton, Close, ArrowRight} from "@icon-park/vue-next";
 import {ref} from "vue";
 import useSite from "../../composables/useSite";
-import ColorModeSwitcher from "../ui/basic/ColorModeSwitcher";
+import PinColorModeIcon from "../ui/basic/PinColorModeIcon";
 
 const site = useSite()
 
