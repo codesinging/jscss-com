@@ -14,7 +14,7 @@
 
 <script setup>
 import {computed, useSlots} from "vue";
-import PinLoadingIcon from "./PinLoadingIcon";
+import PinLoadingIcon from "../icons/PinLoadingIcon";
 
 const props = defineProps({
     nativeType: {

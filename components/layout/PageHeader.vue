@@ -43,10 +43,10 @@
 
 <script setup>
 import JscssLogo from "../images/JscssLogo";
-import ColorModeSwitcher from "./ColorModeSwitcher";
 import {HamburgerButton, Close, ArrowRight} from "@icon-park/vue-next";
 import {ref} from "vue";
 import useSite from "../../composables/useSite";
+import ColorModeSwitcher from "../common/ColorModeSwitcher";
 
 const site = useSite()
 

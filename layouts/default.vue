@@ -8,8 +8,8 @@
 </template>
 
 <script setup>
-import PageFooter from "../components/common/PageFooter";
-import PageHeader from "../components/common/PageHeader";
+import PageFooter from "../components/layout/PageFooter";
+import PageHeader from "../components/layout/PageHeader";
 </script>
 
 <style scoped>

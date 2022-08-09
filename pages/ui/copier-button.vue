@@ -33,8 +33,8 @@
 </template>
 
 <script setup>
-import PinInput from "../../components/icons/PinInput";
-import PinCopierButton from "../../components/icons/PinCopierButton";
+import PinInput from "../../components/form/PinInput";
+import PinCopierButton from "../../components/common/PinCopierButton";
 import {ref} from "vue";
 import {useClipboard} from "@vueuse/core";
 

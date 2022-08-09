@@ -58,7 +58,7 @@
 <script setup>
 import {computed, ref, useSlots, watch} from "vue";
 import {CloseOne as Close} from "@icon-park/vue-next";
-import PinLoadingIcon from "./PinLoadingIcon";
+import PinLoadingIcon from "../icons/PinLoadingIcon";
 
 const props = defineProps({
     modelValue: [String, Number],

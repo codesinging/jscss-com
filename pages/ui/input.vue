@@ -72,8 +72,8 @@
 
 <script setup>
 import {Refresh} from "@icon-park/vue-next";
-import PinButton from "../../components/icons/PinButton";
-import PinInput from "../../components/icons/PinInput";
+import PinButton from "../../components/common/PinButton";
+import PinInput from "../../components/form/PinInput";
 import {ref} from "vue";
 
 const msg = ref('')

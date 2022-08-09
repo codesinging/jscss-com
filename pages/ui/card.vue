@@ -84,9 +84,9 @@
 </template>
 
 <script setup>
-import PinCard from "../../components/icons/PinCard";
+import PinCard from "../../components/common/PinCard";
 import {Edit} from "@icon-park/vue-next";
-import PinButton from "../../components/icons/PinButton";
+import PinButton from "../../components/common/PinButton";
 </script>
 
 <style scoped>
