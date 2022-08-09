@@ -75,11 +75,12 @@ const contentClasses = {
 .pin-card {
     @apply overflow-hidden;
     @apply bg-white;
-    @apply dark:bg-gray-800;
+    @apply dark:bg-gray-800 dark:border-gray-500;
 }
 
 .pin-card-header {
     @apply flex items-center justify-between border-b h-14 px-4;
+    @apply dark:border-gray-500;
 }
 
 .pin-card-header-main {
@@ -95,14 +96,17 @@ const contentClasses = {
 }
 
 .pin-card-subtitle {
-    @apply text-sm text-gray-400;
+    @apply text-sm text-gray-500;
+    @apply dark:text-gray-300;
 }
 
 .pin-card-header-extra {
     @apply text-sm text-gray-500;
+    @apply dark:text-gray-300;
 }
 
 .pin-card-footer {
     @apply flex items-center justify-between border-t h-12 px-4 text-sm text-gray-500;
+    @apply dark:border-gray-500 dark:text-gray-300;
 }
 </style>

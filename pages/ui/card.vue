@@ -62,13 +62,13 @@
             <pin-card border rounded subtitle="副标题" :icon="Edit">
                 Content
                 <template #footer>
-                    <div class="text-gray-500">尾部左侧内容</div>
+                    <div>尾部左侧内容</div>
                     <pin-button size="small" type="danger">删除</pin-button>
                 </template>
             </pin-card>
             <pin-card border rounded title="标题" subtitle="副标题" :icon="Edit" extra="这是额外内容">
                 <template #extra>
-                    <pin-button type="primary" size="small">刷新</pin-button>
+                    <pin-button size="small">刷新</pin-button>
                 </template>
                 Content
                 <template #footer>
