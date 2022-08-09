@@ -84,12 +84,7 @@ const widthClass = computed(() => {
 })
 
 const paddingClass = computed(() => {
-    const classes = {
-        small: 'px-2',
-        default: 'px-4',
-        large: 'px-12',
-    }
-    return props.shape === 'circle' ? '' : (classes[props.size] || classes.default)
+    return props.shape === 'circle' ? '' : 'px-4'
 })
 
 const fontSizeClass = computed(() => {

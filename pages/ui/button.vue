@@ -1,15 +1,27 @@
 <template>
     <div class="container py-4 space-y-4">
         <div class="space-x-2">
+            <pin-button>普通</pin-button>
+            <pin-button type="primary">主要</pin-button>
+            <pin-button type="success">成功</pin-button>
+            <pin-button type="danger">危险</pin-button>
+        </div>
+        <div class="space-x-2">
+            <pin-button size="small">普通</pin-button>
+            <pin-button size="small" type="primary">主要</pin-button>
+            <pin-button size="small" type="success">成功</pin-button>
+            <pin-button size="small" type="danger">危险</pin-button>
+        </div>
+        <div class="space-x-2">
             <pin-button>普通按钮</pin-button>
             <pin-button type="primary">主要按钮</pin-button>
-            <pin-button type="success">危险按钮</pin-button>
+            <pin-button type="success">成功按钮</pin-button>
             <pin-button type="danger">危险按钮</pin-button>
         </div>
         <div class="space-x-2">
             <pin-button>普通按钮</pin-button>
             <pin-button shape="square" type="primary">主要按钮</pin-button>
-            <pin-button shape="rounded" type="success">危险按钮</pin-button>
+            <pin-button shape="rounded" type="success">成功按钮</pin-button>
             <pin-button shape="pill" type="danger">危险按钮</pin-button>
         </div>
         <div class="space-x-2">
