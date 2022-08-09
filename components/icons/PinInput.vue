@@ -8,7 +8,7 @@
 
         <div class="pin-input-body" :class="containerClasses">
             <div v-if="hasPrefix" class="pin-input-tag ml-2">
-                <slot name="prefix"></slot>
+                <slot name="prefix">{{ prefix }}</slot>
             </div>
 
             <input
@@ -28,11 +28,12 @@
                 @change="onChange"
                 ref="input"
                 class="pin-input-input"
+                :class="inputClasses"
                 v-model="modelValue"
             >
 
             <div v-if="hasSuffix" class="pin-input-tag mr-2">
-                <slot name="suffix"></slot>
+                <slot name="suffix">{{ suffix }}</slot>
             </div>
 
             <div v-if="isWordLimit" class="pin-input-tag mr-2">{{ wordLength }}/{{ wordLimit }}</div>
@@ -60,7 +61,7 @@ import {CloseOne as Close} from "@icon-park/vue-next";
 import PinLoadingIcon from "./PinLoadingIcon";
 
 const props = defineProps({
-    modelValue: String,
+    modelValue: [String, Number],
     type: {
         type: String,
         default: 'text',
@@ -69,8 +70,14 @@ const props = defineProps({
         type: String,
         default: 'default',
     },
+    align: {
+        type: String,
+        default: 'left',
+    },
     prepend: String,
     append: String,
+    prefix: String,
+    suffix: String,
     disabled: Boolean,
     clearable: Boolean,
     showWordLimit: Boolean,
@@ -104,9 +111,9 @@ const hasPrepend = computed(() => (props.prepend ?? '').length > 0 || slots.prep
 
 const hasAppend = computed(() => (props.append ?? '').length > 0 || slots.append !== undefined)
 
-const hasPrefix = computed(() => slots.prefix !== undefined)
+const hasPrefix = computed(() => (props.prefix ?? '').length > 0 || slots.prefix !== undefined)
 
-const hasSuffix = computed(() => slots.suffix !== undefined)
+const hasSuffix = computed(() => (props.suffix ?? '').length > 0 || slots.suffix !== undefined)
 
 const isWordLimit = computed(() => props.showWordLimit && props.maxLength)
 
@@ -131,6 +138,14 @@ const containerClasses = computed(() => {
     isDisabled.value && classes.push('pin-input-disabled')
 
     return classes
+})
+
+const inputClasses = computed(() => {
+    return {
+        left: 'text-left',
+        center: 'text-center',
+        right: 'text-right',
+    }[props.align]
 })
 
 const emits = defineEmits(['update:modelValue', 'input', 'change', 'focus', 'blur', 'clear'])
