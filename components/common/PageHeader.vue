@@ -1,7 +1,7 @@
 <template>
     <div class="bg-gray-100 text-gray-600 dark:bg-gray-800 dark:text-gray-300">
         <div class="container h-14 flex items-center justify-between px-4 md:px-0">
-            <div class="space-x-8 h-full flex items-center">
+            <div class="space-x-12 h-full flex items-center">
                 <div class="space-x-2 flex items-center">
                     <nuxt-link to="/" @click="toggleDrawer">
                         <jscss-logo size="24" class="animate-pulse"/>
@@ -66,7 +66,7 @@ const toggleDrawer = () => drawerVisible.value = !drawerVisible.value
 
 <style scoped>
 .nav-item {
-    @apply h-full flex items-center block px-4 hover:bg-gray-200 dark:hover:bg-gray-900;
+    @apply h-full flex items-center block px-6 hover:bg-gray-200 dark:hover:bg-gray-900;
 }
 
 .router-link-active.nav-item {
