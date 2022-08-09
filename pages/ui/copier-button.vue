@@ -33,10 +33,10 @@
 </template>
 
 <script setup>
-import PinInput from "../../components/form/PinInput";
-import PinCopierButton from "../../components/common/PinCopierButton";
 import {ref} from "vue";
 import {useClipboard} from "@vueuse/core";
+import PinCopierButton from "../../components/ui/basic/PinCopierButton";
+import PinInput from "../../components/ui/form/PinInput";
 
 const content1 = ref('hello')
 const content2 = ref('world')

@@ -46,7 +46,7 @@ import JscssLogo from "../images/JscssLogo";
 import {HamburgerButton, Close, ArrowRight} from "@icon-park/vue-next";
 import {ref} from "vue";
 import useSite from "../../composables/useSite";
-import ColorModeSwitcher from "../common/ColorModeSwitcher";
+import ColorModeSwitcher from "../ui/basic/ColorModeSwitcher";
 
 const site = useSite()
 

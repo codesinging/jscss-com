@@ -72,7 +72,7 @@
 
 <script setup>
 import {Refresh} from "@icon-park/vue-next";
-import PinButton from "../../components/common/PinButton";
+import PinButton from "../../components/ui/basic/PinButton";
 </script>
 
 <style scoped>

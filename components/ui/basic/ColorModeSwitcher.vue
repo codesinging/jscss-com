@@ -7,7 +7,7 @@
 <script setup>
 import {NewComputer, Moon, SunOne} from "@icon-park/vue-next";
 import {useColorMode} from "@vueuse/core";
-import {computed, nextTick, ref, watch} from "vue";
+import {computed, nextTick, ref} from "vue";
 
 defineProps({
     size: {
