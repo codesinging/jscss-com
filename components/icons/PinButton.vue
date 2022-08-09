@@ -8,7 +8,7 @@
     >
         <component :is="icon" :size="iconSize" v-if="icon && !loading"/>
         <pin-loading-icon v-if="loading" :size="iconSize"/>
-        <span v-if="slots.default" class="inline-flex items-center justify-center"><slot></slot></span>
+        <span v-if="hasContent" class="inline-flex items-center justify-center"><slot></slot></span>
     </button>
 </template>
 
@@ -108,6 +108,8 @@ const iconSize = computed(() => {
 const isDisabled = computed(() => props.disabled || props.loading)
 
 const slots = useSlots()
+
+const hasContent = computed(() => !!slots.default && (slots.default()[0].children.length > 0))
 
 const emits = defineEmits(['click'])
 
