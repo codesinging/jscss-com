@@ -10,7 +10,7 @@ export const useSite = () => useState('site', () => ({
 }))
 
 export const useFetchSite = async () => {
-    const {data} = await useGet('settings/settings', {group: 'site'})
+    const {data} = await useGet('settings/group/site')
 
     return {
         name: data.value.site_name,
